@@ -8,6 +8,20 @@
  	<title>Hot Celebrities</title>
  </head>
  <body>
- 
+ 	<ul data-bind="foreach: catList">
+ 		<li data-bind="text: name, click: $parent.setFriend"></li>
+ 	</ul>
+ 	<div data-bind="with: currentFriend">
+ 		<h2 data-bind="text: name"></h2>
+ 		<div>
+ 			<h3>Nicknames:</h3>
+ 			<ul data-bind="foreach: nicknames">
+ 				<li data-bind="text: $data"></li>
+ 			</ul>
+ 		</div>
+ 		<h3 data-bind="text: title"></h3>
+ 		<div data-bind="text: clickCount"></div>
+ 		<img src="" alt="hot celebrity" data-bind="click: $parent.incrementCounter, {src: imgSrc}">
+ 	</div>
  </body>
  </html>
