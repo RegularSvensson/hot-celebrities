@@ -36,3 +36,30 @@ var ViewModel = function() {
 		self.currentCelebrity(clickedCelebrity);
 	};
 }
+
+/* ======= View ======= */
+
+var Celebrity = function(data) {
+	this.clickCount = ko.observable(data.clickCount);
+	this.name = ko.observable(data.name);
+	this.imgSrc = ko.observable(data.imgSrc);
+	this.nicknames = ko.observable(data.nicknames);
+
+	this.title = ko.computed(function() {
+		var title;
+		var clicks = this.clickCount();
+
+		if (clicks < 10) {
+			title = 'Uggo';
+		} else if (clicks < 20) {
+			title = 'Not too bad'
+		} else if (clicks < 30) {
+			title = 'Cute'
+		} else if (clicks < 40) {
+			title = 'Whoa...'
+		} else {
+			title = 'Marry me!!'
+		}
+		return title;
+	}, this);
+}
