@@ -63,3 +63,5 @@ var Celebrity = function(data) {
 		return title;
 	}, this);
 }
+
+ko.applyBindings(new ViewModel());
