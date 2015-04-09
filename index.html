@@ -6,7 +6,7 @@
  </head>
  <body>
  	<ul data-bind="foreach: celebrityList">
- 		<li data-bind="text: name, click: $parent.setCelebrity"></li>
+ 		<button data-bind="text: name, click: $parent.setCelebrity"></button>
  	</ul>
  	<div data-bind="with: currentCelebrity">
  		<h2 data-bind="text: name"></h2>
